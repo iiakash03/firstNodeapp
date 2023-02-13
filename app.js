@@ -10,6 +10,10 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+const db=require('./util/database');
+
+db.execute('SELECT * FROM products').then().catch();
+
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
